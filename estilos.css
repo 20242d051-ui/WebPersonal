@@ -1,0 +1,496 @@
+
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fondo: #0b1120;
+    --fondo-claro: #111c30;
+    --azul: #3b82f6;
+    --azul-claro: #60a5fa;
+    --blanco: #f8fafc;
+    --texto: #a9b7ce;
+    --borde: rgba(148, 163, 184, 0.15);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--blanco);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ENCABEZADO Y MENÚ */
+.encabezado {
+    background:
+        radial-gradient(ellipse at top right, #172b4b 0%, transparent 55%),
+        var(--fondo);
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    border-bottom: 1px solid var(--borde);
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.logo span,
+.logo b {
+    color: var(--azul-claro);
+}
+
+.menu {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: #cbd5e1;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--azul-claro);
+}
+
+/* PORTADA */
+.portada {
+    min-height: 510px;
+    padding: 75px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.etiqueta,
+.subtitulo {
+    color: var(--azul-claro);
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.presentacion h1 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.presentacion h1 span {
+    color: var(--azul-claro);
+}
+
+.presentacion > p {
+    color: var(--texto);
+    max-width: 520px;
+    margin-bottom: 30px;
+}
+
+.acciones {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.boton {
+    display: inline-block;
+    padding: 12px 23px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.principal {
+    background: var(--azul);
+    color: white;
+}
+
+.principal:hover {
+    background: #2563eb;
+    transform: translateY(-3px);
+}
+
+.secundario {
+    border: 1px solid #475569;
+    color: white;
+}
+
+.secundario:hover {
+    border-color: var(--azul);
+    color: var(--azul-claro);
+}
+
+.imagen-portada {
+    position: relative;
+}
+
+.imagen-portada img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 1px solid var(--borde);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.etiqueta-flotante {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 16px;
+    background: rgba(11, 17, 32, 0.9);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.punto {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* SECCIONES */
+.seccion {
+    padding: 85px 8%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-seccion h2 {
+    font-size: 2.2rem;
+    margin: 10px 0;
+}
+
+.titulo-seccion h2 span {
+    color: var(--azul-claro);
+}
+
+.titulo-seccion > p {
+    color: var(--texto);
+}
+
+/* SOBRE MÍ */
+.biografia {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 55px;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.foto-biografia img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.texto-biografia h3 {
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+}
+
+.texto-biografia > p {
+    color: var(--texto);
+    margin-bottom: 16px;
+}
+
+.datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.dato {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--fondo-claro);
+    border: 1px solid var(--borde);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.icono {
+    font-size: 1.5rem;
+}
+
+.dato strong {
+    font-size: 0.9rem;
+}
+
+.dato p {
+    color: var(--texto);
+    font-size: 0.78rem;
+}
+
+/* INTERESES */
+.seccion-intereses {
+    background: #0e1729;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.tarjeta {
+    background: var(--fondo-claro);
+    border: 1px solid var(--borde);
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+    border-color: var(--azul);
+}
+
+.icono-tarjeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58px;
+    height: 58px;
+    font-size: 1.8rem;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.azul {
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.morado {
+    background: rgba(139, 92, 246, 0.15);
+}
+
+.verde {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.tarjeta h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.tarjeta p {
+    color: var(--texto);
+    margin-bottom: 22px;
+}
+
+.enlace-tarjeta {
+    color: var(--azul-claro);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* OBJETIVOS */
+.objetivo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background: linear-gradient(120deg, #152b4b, #101b30);
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+}
+
+.objetivo h2 {
+    font-size: 1.8rem;
+    margin: 12px 0;
+}
+
+.objetivo p {
+    color: var(--texto);
+    max-width: 650px;
+}
+
+/* CONTACTO */
+.contacto {
+    background: #0e1729;
+}
+
+.caja-contacto {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px;
+    text-align: center;
+    background: var(--fondo-claro);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+}
+
+.icono-correo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--azul-claro);
+    font-size: 2rem;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.caja-contacto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.caja-contacto p {
+    color: var(--texto);
+    margin-bottom: 25px;
+}
+
+/* PIE DE PÁGINA */
+.pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 8%;
+    border-top: 1px solid var(--borde);
+    flex-wrap: wrap;
+}
+
+.pie p {
+    color: var(--texto);
+    font-size: 0.85rem;
+}
+
+.volver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: var(--azul);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.4rem;
+}
+
+/* ADAPTACIÓN PARA TABLETS Y CELULARES */
+@media (max-width: 900px) {
+    .portada {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+    }
+
+    .imagen-portada img {
+        height: 320px;
+    }
+
+    .biografia {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .foto-biografia img {
+        height: 300px;
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .navegacion {
+        justify-content: center;
+        padding: 20px 5%;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .menu a {
+        font-size: 0.9rem;
+    }
+
+    .portada {
+        padding: 50px 6%;
+        gap: 35px;
+    }
+
+    .presentacion h1 {
+        font-size: 2.2rem;
+    }
+
+    .imagen-portada img {
+        height: 240px;
+    }
+
+    .seccion {
+        padding: 60px 6%;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 1.8rem;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .datos {
+        grid-template-columns: 1fr;
+    }
+
+    .objetivo {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .objetivo h2 {
+        font-size: 1.5rem;
+    }
+
+    .caja-contacto {
+        padding: 30px 20px;
+    }
+
+    .pie {
+        flex-direction: column;
+        text-align: center;
+    }
+}
